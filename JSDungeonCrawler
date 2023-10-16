@@ -21,6 +21,7 @@
          </style>
         <body>
             <div class="Sprite" id="playersprite"></div>
+            
             <button class="StartButton" id="go">Start</button>
         </body>
         
