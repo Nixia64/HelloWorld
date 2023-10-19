@@ -7,27 +7,46 @@
                     height:75px;
                     width:275px;
                     font-size:30px;
-                    position:absolute;
-                    left:575px;top:400px;
+					position:sticky;
+                    top:75%;
+					
                 }
 
                 .Sprite{
                     width:75px;
                     height:75px;
-                    background-image:url(Sprite.png);
+                    background-image:url("assets\\Character\\Sprite.png");
                     margin:10px;
+                    position:fixed;
+                    left:625px;top:450px;
+                    
+                }
+
+                body{
+                    background-image:url("assets\\Level\\screenmenu1.gif");
+                    background-repeat:no-repeat;
+                    background-size:cover;
+					background-attachment:local;
+					
+                    max-height:800px;
+                    
+					
                 }
 
          </style>
         <body>
+
             <div class="Sprite" id="playersprite"></div>
+			<center>
             <button class="StartButton" id="go">Start</button>
+			</center>
+
         </body>
         
         <script>
             go.addEventListener('click', action);
 
-            var audio = new Audio('Main_Menu.mp3');
+            var audio = new Audio('assets\\Sound\\Main_Menu.mp3');
             audio.loop = true;
             audio.play();
             audio.onended = function(){
