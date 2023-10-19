@@ -10,6 +10,7 @@ using namespace cv;
 using namespace std;
 
 
+
 int main()
 {
 	string g;
@@ -19,7 +20,7 @@ int main()
 	cout << "Entrez votre code secret" << endl;
 	getline(cin, secret);
 
-	Mat img = imread("E:\\z autre\\black_image.jpg");
+	Mat img = imread("E:\\z autre\\test.png");
 
 	char* char_array = new char[secret.length() + 1];
 	char_array[secret.length()] = '\0';
@@ -29,6 +30,31 @@ int main()
 		char_array[i] = secret[i];
 	}
 
+	int imgRows = img.rows;
+	int imgCols = img.cols;
+
+	for (int r = 0; r < imgRows; r++)
+	{
+		for (int c = 0; c < imgCols; c++)
+		{
+			
+			Vec3b EncodePrep = img.at<Vec3b>(r, c);
+
+			if (EncodePrep[0] == 255 && EncodePrep[1] == 255 && EncodePrep[2] == 255)
+			{
+				EncodePrep[0] = 254;
+				EncodePrep[1] = 254;
+				EncodePrep[2] = 254;
+
+					img.at<Vec3b>(r, c) = EncodePrep;
+
+			}
+
+
+
+
+		}
+	}
 
 
 	int i, j;
@@ -54,10 +80,10 @@ int main()
 
 	}
 
-
-
 	imwrite("blackimage_encoded.png", img);
 	imshow("image", img);
 	waitKey(0);
+
+	return 0;
 
 }
