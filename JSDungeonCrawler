@@ -7,9 +7,8 @@
                     height:75px;
                     width:275px;
                     font-size:30px;
-					position:sticky;
-                    top:75%;
-					
+		    position:sticky;
+                    top:75%;		
                 }
 
                 .Sprite{
@@ -19,18 +18,14 @@
                     margin:10px;
                     position:fixed;
                     left:625px;top:450px;
-                    
                 }
 
                 body{
                     background-image:url("assets\\Level\\screenmenu1.gif");
                     background-repeat:no-repeat;
                     background-size:cover;
-					background-attachment:local;
-					
-                    max-height:800px;
-                    
-					
+		    background-attachment:local;		
+                    max-height:800px;	
                 }
 
          </style>
